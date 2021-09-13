@@ -1,17 +1,11 @@
-# 7. По длинам трех отрезков, введенных пользователем, определить возможность существования треугольника,
-# составленного из этих отрезков. Если такой треугольник существует, то определить, является ли он разносторонним,
-# равнобедренным или равносторонним
+# 7. Напишите программу, доказывающую или проверяющую, что для множества натуральных чисел выполняется равенство:
+# 1+2+...+n = n(n+1)/2, где n - любое натуральное число.
 
-x = input("length 1 = ")
-y = input("length 2 = ")
-z = input("length 3 = ")
 
-if x > 0 and y > 0 and z > 0:
-    print("this triangle may exist")
-    if x != y and x != z and y != z:
-        print("versatile triangle")
-    if x == y or x == z or y == z:
-        print("isosceles triangle")
-    if x == y and x == z and y == z:
-        print("equilateral triangle")
-        
+my_number = int(input("Please input number: "))
+res1 = 0
+res2 = my_number*(my_number+1)/2
+for iter in range(my_number+1):
+    res1 += iter
+
+print(f"{res1 == res2}")
