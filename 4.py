@@ -1,19 +1,10 @@
-# 4. Написать программу, которая генерирует в указанных пользователем границах:
-#
-#     случайное целое число;
-#     случайное вещественное число;
-#     случайный символ.
+# 4. Найти сумму n элементов следующего ряда чисел: 1 -0.5 0.25 -0.125 ...Количество элементов (n) вводится с клавиатуры.
 
-import random
+my_n = int(input("Please input number: ")) - 1
+ferst = 1
+result = 1
+for iter in range(my_n):
+    result += ferst / 2
+    ferst = ferst / 2
 
-x = int(input("\tinteger 1 = "))
-y = int(input("\tinteger 2 = "))
-print(random.randint(x, y))
-
-x = float(input("\tfloat 1 = "))
-y = float(input("\tfloat 2 = "))
-print(random.uniform(x, y))
-
-x = input("\tchar 1 = ")
-y = input("\tchar 2 = ")
-print(chr(random.randrange(ord(x), ord(y))))
+print(result)
