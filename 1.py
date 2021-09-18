@@ -21,6 +21,6 @@ mean = mean/numbers_firm
 for k in range(numbers_firm):
     if firm[k][number_report + 1] > mean:
         print(f"{firm[k][0]}  >  mean ")
-    else:
+    elif firm[k][number_report + 1] < mean: 
         print(f"       mean  >  {firm[k][0]}")
 
