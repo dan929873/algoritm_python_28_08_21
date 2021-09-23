@@ -8,18 +8,10 @@
 
 import sys
 
-def show_sizeof(x, level=0):
-    print ("\t" * level, x.__class__, sys.getsizeof(x), x)
-    if hasattr(x, '__iter__'):
-        if hasattr(x, 'items'):
-            for xx in x.items():
-                show_sizeof(xx, level + 1)
-        else:
-            for xx in x:
-                show_sizeof(xx, level + 1)
-
 # hw1
 # 1. Найти сумму и произведение цифр трехзначного числа, которое вводит пользователь.
+def my_memory(x):
+    print ("\t", x.__class__, sys.getsizeof(x), x)
 
 my_number = input("Please input digit number: ")
 
@@ -34,13 +26,13 @@ try:
 except ValueError:
     print("you do not input number :(")
 
-show_sizeof(my_sum)
-show_sizeof(product)
-show_sizeof(my_number)
+my_memory(my_sum)
+my_memory(product)
+my_memory(my_number)
 
-# Please input digit number: 21
-# +: 3
-# *: 2
-#  <class 'int'> 28 3
-#  <class 'int'> 28 2
-#  <class 'str'> 51 21
+# result in console
+# +: 9
+# *: 20
+# 	 <class 'int'> 28 9
+# 	 <class 'int'> 28 20
+# 	 <class 'str'> 51 45
